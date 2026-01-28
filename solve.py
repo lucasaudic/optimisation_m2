@@ -6,6 +6,8 @@ from src.model.tsp_model import TSPInstance
 from src.exact.branch_and_bound import BranchAndBoundSolver
 # from src.metaheuristics.grasp import GraspSolver # TODO: Add other solvers as needed
 # from src.constructive.nearest_neighbor import ConstructiveSolver
+from src.grasp.grasp_solver import GRASPSolver
+from src.constructive.nearest_neighbor import ConstructiveSolver
 from src.local_search.two_opt import LocalSearchSolver
 
 def main():
@@ -33,8 +35,13 @@ def main():
         solver = ConstructiveSolver(instance)
     elif method == "local_search":
         solver = LocalSearchSolver(instance)
+<<<<<<< HEAD
     # elif method == "grasp":
     #     solver = GraspSolver(instance)
+=======
+    elif method == "grasp":
+        solver = GRASPSolver(instance)
+>>>>>>> 51d6dab (Ajout du projet et fichiers principaux)
     else:
         print(f"Unknown method: {method}")
         sys.exit(1)
