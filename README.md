@@ -40,4 +40,7 @@ python3 -m src.exact.branch_and_bound
 *(Note: Currently the individual files do not have a main block to execute logic, they just define classes. Use `benchmark.py` to run them.)*
 
 ## Authors
-[Your Name/Team]
+- Lucas AUDIC
+- Axel BATTEUX
+- Romain PERIDY
+- Tristan DELEPINE
