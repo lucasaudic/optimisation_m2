@@ -1,45 +1,41 @@
-# TSP Optimization Project
+# Projet d'Optimisation - Résolution du TSP
 
-This project implements various algorithms to solve the Traveling Salesperson Problem (TSP).
+Ce projet s'inscrit dans le cadre du Master 2 Optimisation et vise à implémenter et comparer différentes approches algorithmiques pour la résolution du Problème du Voyageur de Commerce (Traveling Salesperson Problem).
 
-## Structure
+## Structure du Projet
 
-- **src/**: Source code.
-  - **model/**: Base classes (`TSPInstance`, `Solution`, `Solver`).
-  - **constructive/**: Nearest Neighbor implementation.
-  - **local_search/**: 2-opt implementation.
-  - **grasp/**: GRASP metaheuristic implementation.
-  - **exact/**: Branch and Bound implementation.
-- **instances/**: Directory for problem instances.
-  - **new_instances/**: The set of instances used for benchmarking.
-- **report/**: Contains the final report (`RAPPORT.md`) and benchmark results.
-- **benchmark.py**: Script to run experiments.
+L'architecture du projet est organisée comme suit :
 
-## Usage
+- **src/** : Contient l'ensemble du code source Python.
+  - **model/** : Définition des classes de base (`TSPInstance`, `Solution`).
+  - **constructive/** : Implémentation de l'heuristique constructive (Plus Proche Voisin).
+  - **local_search/** : Implémentation de la recherche locale (2-Opt).
+  - **grasp/** : Implémentation de la méta-heuristique GRASP.
+  - **exact/** : Implémentation de la méthode exacte (Branch and Bound).
+- **instances/** : Contient les jeux de données de test (format TSPLIB).
+- **report/** : Contient les résultats d'exécution, les graphiques générés et le rapport LaTeX.
+- **docs/** : Documentation technique complémentaire.
+- **scripts/** : Scripts utilitaires secondaires.
 
-### Prerequisites
-- Python 3.x
-- `pandas` and `tabulate` (install via `pip install pandas tabulate`)
+Le rapport complet au format PDF est disponible à la racine : `Projet_d_Optimisation.pdf`.
 
-### Running the Benchmark
-To run the solvers on all instances in `instances/new_instances/` and generate results:
+## Utilisation
+
+### Prérequis
+- Python 3.8 ou supérieur
+- Bibliothèques : `pandas`, `matplotlib`
+
+### Exécution du Benchmark
+Pour lancer la campagne de tests complète sur l'ensemble des instances :
 
 ```bash
-python3 benchmark.py
+python benchmark.py
 ```
 
-### Running Individual Solvers
-Because of the project structure (relative imports), you must run files as modules from the project root.
+Ce script exécutera séquentiellement les différents solveurs et générera les fichiers de résultats dans le dossier `report/`.
 
-**Do not run:** `python src/exact/branch_and_bound.py` (This will cause an ImportError).
+## Auteurs
 
-**Instead, run:**
-```bash
-python3 -m src.exact.branch_and_bound
-```
-*(Note: Currently the individual files do not have a main block to execute logic, they just define classes. Use `benchmark.py` to run them.)*
-
-## Authors
 - Lucas AUDIC
 - Axel BATTEUX
 - Romain PERIDY
